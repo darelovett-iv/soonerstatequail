@@ -43,6 +43,13 @@ export async function registerRoutes(
       order: 4,
       isVisible: true,
     });
+    await storage.createLink({
+      title: "2025 Event Photos",
+      url: "https://www.quailcoalition.org/galleries/", // Assuming this is where photos are, or placeholder
+      icon: "Download",
+      order: 5,
+      isVisible: true,
+    });
   }
 
   return httpServer;

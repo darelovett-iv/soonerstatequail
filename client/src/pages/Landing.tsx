@@ -50,6 +50,12 @@ export default function Landing() {
             Quail Coalition
           </h2>
           <div className="w-16 h-1 bg-primary mx-auto mt-4 rounded-full" />
+          
+          <div className="mt-8 space-y-1 text-[#4A3728]">
+            <p className="text-lg font-semibold uppercase tracking-wider">Dinner and Auction</p>
+            <p className="text-xl font-bold">April 23, 2026 at The Bower</p>
+            <p className="text-md opacity-90">4600 W Covell Rd, Edmond, OK 73012</p>
+          </div>
         </motion.div>
 
         {/* Links Section */}
