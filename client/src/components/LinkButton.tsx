@@ -50,16 +50,16 @@ export function LinkButton({ title, url, icon = "Globe", className, index }: Lin
         <h3 className="font-display font-semibold text-lg text-[#4A3728] group-hover:text-primary transition-colors duration-300 truncate">
           {title}
         </h3>
-        <p className="text-sm text-muted-foreground group-hover:text-primary/70 transition-colors duration-300 truncate flex items-center gap-1">
-          <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 -ml-2 group-hover:ml-0">
+        <p className="text-sm text-primary/70 truncate flex items-center gap-1">
+          <span>
             Open Link
           </span>
-          <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <ExternalLink className="w-3 h-3" />
         </p>
       </div>
       
-      {/* Subtle chevron purely for decoration */}
-      <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0 text-primary/40">
+      {/* Subtle arrow visible by default */}
+      <div className="transition-all duration-300 transform group-hover:translate-x-1 text-primary/60">
         →
       </div>
     </motion.a>
