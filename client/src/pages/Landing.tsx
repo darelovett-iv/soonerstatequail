@@ -51,10 +51,13 @@ export default function Landing() {
           </h2>
           <div className="w-16 h-1 bg-primary mx-auto mt-4 rounded-full" />
           
-          <div className="mt-8 space-y-1 text-[#4A3728]">
-            <p className="text-lg font-semibold uppercase tracking-wider">Dinner and Auction</p>
-            <p className="text-xl font-bold">April 23, 2026 at The Bower</p>
-            <p className="text-md opacity-90">4600 W Covell Rd, Edmond, OK 73012</p>
+          <div className="mt-8 space-y-2 text-[#4A3728]">
+            <p className="text-sm font-bold uppercase tracking-[0.2em] text-primary">2026 Event Details</p>
+            <h3 className="text-2xl font-display font-bold">Dinner and Auction</h3>
+            <div className="space-y-1 opacity-90">
+              <p className="text-lg font-medium">April 23, 2026 at The Bower</p>
+              <p className="text-sm italic">4600 W Covell Rd, Edmond, OK 73012</p>
+            </div>
           </div>
         </motion.div>
 
