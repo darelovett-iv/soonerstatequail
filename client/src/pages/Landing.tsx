@@ -1,24 +1,16 @@
-import { useLinks } from "@/hooks/use-links";
 import { LinkButton } from "@/components/LinkButton";
 import { motion } from "framer-motion";
 import logo from "@assets/OKC_full_color_logo_sooner_PNG-yellowtxt_(2)_1770994602931.png";
-import { Skeleton } from "@/components/ui/skeleton";
+
+// Hardcoded links for static deployment (Netlify)
+const LINKS = [
+  { id: 1, title: "Purchase Tickets & Tables", url: "https://soonerstateqc.muradbid.com", icon: "Ticket", order: 1 },
+  { id: 2, title: "2026 Event Flyer", url: "/documents/flyer.pdf", icon: "FileText", order: 2 },
+  { id: 3, title: "Sponsorship Form", url: "/documents/sponsorship_form.pdf", icon: "FileText", order: 3 },
+  { id: 4, title: "Visit Quail Coalition", url: "https://www.quailcoalition.org/", icon: "Globe", order: 4 },
+];
 
 export default function Landing() {
-  const { data: links, isLoading, error } = useLinks();
-
-  // Fallback links in case backend is empty or failing, to ensure the UI looks good for the demo
-  const fallbackLinks = [
-    { id: 1, title: "Parent Organization", url: "https://www.quailcoalition.org/", icon: "Globe", order: 1 },
-    { id: 2, title: "Event Flyer", url: "/documents/flyer.pdf", icon: "Download", order: 2 },
-    { id: 3, title: "Sponsorship Form", url: "/documents/sponsorship_form.pdf", icon: "FileText", order: 3 },
-  ];
-
-  const displayLinks = (links && links.length > 0) ? links : fallbackLinks;
-
-  // Sorting
-  const sortedLinks = [...displayLinks].sort((a, b) => (a.order || 0) - (b.order || 0));
-
   return (
     <div className="min-h-screen w-full flex flex-col items-center py-12 px-4 sm:px-6 relative overflow-hidden bg-[#FDFBF7]">
       {/* Background Texture Element */}
@@ -63,33 +55,15 @@ export default function Landing() {
 
         {/* Links Section */}
         <div className="w-full max-w-md space-y-4">
-          {isLoading ? (
-            <div className="space-y-4">
-              {[1, 2, 3].map((i) => (
-                <Skeleton key={i} className="h-20 w-full rounded-xl" />
-              ))}
-            </div>
-          ) : error ? (
-            <div className="text-center p-8 bg-red-50 text-red-600 rounded-xl border border-red-100">
-              <p>Unable to load links at this time.</p>
-              <button 
-                onClick={() => window.location.reload()} 
-                className="mt-2 text-sm underline font-semibold"
-              >
-                Try Again
-              </button>
-            </div>
-          ) : (
-            sortedLinks.map((link, idx) => (
-              <LinkButton
-                key={link.id}
-                index={idx}
-                title={link.title}
-                url={link.url}
-                icon={link.icon}
-              />
-            ))
-          )}
+          {LINKS.map((link, idx) => (
+            <LinkButton
+              key={link.id}
+              index={idx}
+              title={link.title}
+              url={link.url}
+              icon={link.icon}
+            />
+          ))}
         </div>
 
         {/* Social / Contact Info */}
