@@ -12,15 +12,15 @@ const LINKS = [
 
 export default function Landing() {
   return (
-    <div className="min-h-screen w-full flex flex-col items-center py-12 px-4 sm:px-6 relative overflow-hidden bg-[#FDFBF7]">
+    <div className="min-h-screen w-full flex flex-col items-center py-12 px-4 sm:px-6 relative overflow-hidden bg-[#0A0A0A] dark">
       {/* Background Texture Element */}
-      <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" 
+      <div className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none" 
            style={{ 
-             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234A3728' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")` 
+             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23F1572B' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")` 
            }} 
       />
 
-      <div className="w-full max-w-2xl mx-auto z-10 flex flex-col items-center">
+      <div className="w-full max-w-4xl mx-auto z-10 flex flex-col items-center">
         {/* Logo Section */}
         <motion.div 
           initial={{ scale: 0.9, opacity: 0 }}
@@ -28,33 +28,33 @@ export default function Landing() {
           transition={{ duration: 0.5 }}
           className="mb-10 text-center relative"
         >
-          <div className="w-64 h-64 sm:w-72 sm:h-72 mx-auto rounded-full bg-white shadow-xl flex items-center justify-center p-0 overflow-hidden border-4 border-white ring-1 ring-border/20 mb-6">
+          <div className="w-64 h-64 sm:w-72 sm:h-72 mx-auto rounded-full bg-[#1A1A1A] shadow-2xl flex items-center justify-center p-0 overflow-hidden border-4 border-[#2A2A2A] ring-1 ring-primary/20 mb-6">
             <img 
               src={logo} 
               alt="Sooner State Quail Coalition Logo" 
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500 opacity-90 hover:opacity-100"
             />
           </div>
-          <h1 className="text-3xl sm:text-4xl font-display font-bold text-[#4A3728] tracking-tight">
+          <h1 className="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight">
             Sooner State
           </h1>
-          <h2 className="text-xl sm:text-2xl text-[#4A3728]/80 font-medium mt-1 font-display">
+          <h2 className="text-xl sm:text-2xl text-white/70 font-medium mt-1 font-display">
             Quail Coalition
           </h2>
-          <div className="w-16 h-1 bg-primary mx-auto mt-4 rounded-full" />
+          <div className="w-16 h-1 bg-primary mx-auto mt-4 rounded-full shadow-[0_0_10px_rgba(241,87,43,0.5)]" />
           
-          <div className="mt-8 space-y-2 text-[#4A3728]">
+          <div className="mt-8 space-y-2 text-white">
             <p className="text-sm font-bold uppercase tracking-[0.2em] text-primary">2026 Event Details</p>
             <h3 className="text-2xl font-display font-bold">Dinner and Auction</h3>
             <div className="space-y-1 opacity-90">
               <p className="text-lg font-medium">April 23, 2026 at The Bower</p>
-              <p className="text-sm italic">4600 W Covell Rd, Edmond, OK 73012</p>
+              <p className="text-sm italic text-white/60">4600 W Covell Rd, Edmond, OK 73012</p>
             </div>
           </div>
         </motion.div>
 
-        {/* Links Section */}
-        <div className="w-full max-w-md space-y-4">
+        {/* Links Section - Grid on desktop, stack on mobile */}
+        <div className="w-full max-w-3xl grid grid-cols-1 md:grid-cols-2 gap-4">
           {LINKS.map((link, idx) => (
             <LinkButton
               key={link.id}
@@ -73,13 +73,13 @@ export default function Landing() {
           transition={{ delay: 0.8 }}
           className="mt-16 text-center space-y-4"
         >
-          <p className="text-muted-foreground font-medium">Connect with us</p>
+          <p className="text-white/50 font-medium">Connect with us</p>
           <div className="flex gap-4 justify-center">
              <a 
                href="https://www.facebook.com/profile.php?id=61587905703395" 
                target="_blank"
                rel="noopener noreferrer"
-               className="p-3 bg-white rounded-full text-[#4A3728] shadow-sm hover:shadow-md hover:text-primary transition-all border border-[#E5DACE]"
+               className="p-3 bg-[#1A1A1A] rounded-full text-white/70 shadow-lg hover:shadow-primary/10 hover:text-primary transition-all border border-[#2A2A2A] hover:border-primary/30"
              >
                <span className="sr-only">Facebook</span>
                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -90,7 +90,7 @@ export default function Landing() {
                href="https://www.instagram.com/soonerstatequail/" 
                target="_blank"
                rel="noopener noreferrer"
-               className="p-3 bg-white rounded-full text-[#4A3728] shadow-sm hover:shadow-md hover:text-primary transition-all border border-[#E5DACE]"
+               className="p-3 bg-[#1A1A1A] rounded-full text-white/70 shadow-lg hover:shadow-primary/10 hover:text-primary transition-all border border-[#2A2A2A] hover:border-primary/30"
              >
                <span className="sr-only">Instagram</span>
                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -101,7 +101,7 @@ export default function Landing() {
                href="https://www.linkedin.com/company/sooner-state-quail-coalition/about/" 
                target="_blank"
                rel="noopener noreferrer"
-               className="p-3 bg-white rounded-full text-[#4A3728] shadow-sm hover:shadow-md hover:text-primary transition-all border border-[#E5DACE]"
+               className="p-3 bg-[#1A1A1A] rounded-full text-white/70 shadow-lg hover:shadow-primary/10 hover:text-primary transition-all border border-[#2A2A2A] hover:border-primary/30"
              >
                <span className="sr-only">LinkedIn</span>
                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -116,7 +116,7 @@ export default function Landing() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.0 }}
-          className="mt-12 text-center text-xs text-muted-foreground pb-8"
+          className="mt-12 text-center text-xs text-white/40 pb-8"
         >
           <p>© 2026 Sooner State Quail Coalition.</p>
           <p className="mt-1">All rights reserved.</p>
