@@ -21,34 +21,47 @@ export default function Landing() {
       />
 
       <div className="w-full max-w-4xl mx-auto z-10 flex flex-col items-center">
-        {/* Logo Section */}
+        {/* Header Section - Horizontal on desktop, Stack on mobile */}
         <motion.div 
-          initial={{ scale: 0.9, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="mb-10 text-center relative"
+          className="mb-12 w-full bg-[#1A1A1A]/50 border border-[#2A2A2A] rounded-3xl p-6 md:p-8 backdrop-blur-sm"
         >
-          <div className="w-64 h-64 sm:w-72 sm:h-72 mx-auto rounded-full bg-[#1A1A1A] shadow-2xl flex items-center justify-center p-0 overflow-hidden border-4 border-[#2A2A2A] ring-1 ring-primary/20 mb-6">
-            <img 
-              src={logo} 
-              alt="Sooner State Quail Coalition Logo" 
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-500 opacity-90 hover:opacity-100"
-            />
-          </div>
-          <h1 className="text-3xl sm:text-4xl font-display font-bold text-white tracking-tight">
-            Sooner State
-          </h1>
-          <h2 className="text-xl sm:text-2xl text-white/70 font-medium mt-1 font-display">
-            Quail Coalition
-          </h2>
-          <div className="w-16 h-1 bg-primary mx-auto mt-4 rounded-full shadow-[0_0_10px_rgba(241,87,43,0.5)]" />
-          
-          <div className="mt-8 space-y-2 text-white">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-primary">2026 Event Details</p>
-            <h3 className="text-2xl font-display font-bold">Dinner and Auction</h3>
-            <div className="space-y-1 opacity-90">
-              <p className="text-lg font-medium">April 23, 2026 at The Bower</p>
-              <p className="text-sm italic text-white/60">4600 W Covell Rd, Edmond, OK 73012</p>
+          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+            {/* Logo */}
+            <div className="flex-shrink-0">
+              <div className="w-48 h-48 md:w-56 md:h-56 rounded-full bg-[#1A1A1A] shadow-2xl flex items-center justify-center p-0 overflow-hidden border-4 border-[#2A2A2A] ring-1 ring-primary/20">
+                <img 
+                  src={logo} 
+                  alt="Sooner State Quail Coalition Logo" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500 opacity-90 hover:opacity-100"
+                />
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="flex-grow text-center md:text-left space-y-6">
+              <div>
+                <h1 className="text-4xl md:text-5xl font-display font-bold text-white tracking-tight leading-tight">
+                  Sooner State
+                </h1>
+                <h2 className="text-2xl md:text-3xl text-white/70 font-medium font-display mt-1">
+                  Quail Coalition
+                </h2>
+                <div className="w-16 h-1 bg-primary mt-4 rounded-full shadow-[0_0_10px_rgba(241,87,43,0.5)] mx-auto md:mx-0" />
+              </div>
+              
+              <div className="space-y-3">
+                <div className="inline-block px-3 py-1 bg-primary/10 border border-primary/20 rounded-full">
+                  <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">2026 Event Details</p>
+                </div>
+                <h3 className="text-2xl md:text-3xl font-display font-bold text-white">Dinner and Auction</h3>
+                <div className="space-y-1 text-white/80">
+                  <p className="text-lg font-medium">April 23, 2026 at The Bower</p>
+                  <p className="text-sm italic text-white/50">4600 W Covell Rd, Edmond, OK 73012</p>
+                </div>
+              </div>
             </div>
           </div>
         </motion.div>
